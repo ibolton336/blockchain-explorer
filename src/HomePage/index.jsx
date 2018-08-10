@@ -1,25 +1,26 @@
 import * as React from "react";
 import { connect } from "react-redux";
-import { userdataActions } from '../_actions/userdata.actions';
-import {ResumeForm} from "../_components/ResumeForm"
+import { userdataActions } from "../_actions/userdata.actions";
+import { SearchResults } from "../_components/SearchResults";
 
-class ConnectedHomePage extends React.Component{
-  componentDidMount() {
-  }
+class ConnectedHomePage extends React.Component {
+  componentDidMount() {}
 
   render() {
-    const {updateUserdata, userdata} = this.props;
+    const { updateUserdata, userdata } = this.props;
     return (
-        <ResumeForm 
-        className="form-container" 
-        onUpdateData={updateUserdata} userdata={userdata.userdata}/>
+      <SearchResults
+        className="form-container"
+        // onUpdateData={updateUserdata}
+        // userdata={userdata.userdata}
+      />
     );
   }
 }
 
 function mapDispatchToProps(dispatch) {
   return {
-    updateUserdata: (payload) => {
+    updateUserdata: payload => {
       dispatch(userdataActions.update(payload));
     }
   };
@@ -30,7 +31,7 @@ function mapStateToProps(state) {
     userdata: state.userdata
   };
 }
-const HomePage= connect(
+const HomePage = connect(
   mapStateToProps,
   mapDispatchToProps
 )(ConnectedHomePage);
