@@ -1,7 +1,7 @@
 import * as React from "react";
 import { connect } from "react-redux";
 import { userdataActions } from "../_actions/userdata.actions";
-import { SearchResults } from "../_components/SearchResults";
+import { SearchComponent } from "../_components/SearchComponent";
 import { Dropdown } from "semantic-ui-react";
 
 const options = [
@@ -37,7 +37,7 @@ class ConnectedHomePage extends React.Component {
           fluid selection options={options}
           onChange={this.setDisplayOption}
         />
-        <SearchResults
+        <SearchComponent
           className="form-container"
           displayOption={displayOption}
         />
