@@ -10,21 +10,27 @@ export class SearchComponent extends React.Component {
 
   }
   handleSearchChange = (e, data) => {
+    this.setState({ searchText: data.value })
 
   }
   handleSearch = (e, data) => {
-    this.setState({searchText: data.value})
+    this.setState({ searchText: data.value })
   }
   render() {
-    const { displayOption } = this.props;
+    console.log('this.props', this.props)
+    const { onSearch } = this.props;
     return (
 
 
       <div>
-        <Input placeholder="Search" onChange={this.handleSearchChange} />
-        <Button icon onClick={this.handleSearch}>
-          <Icon name='search' />
-        </Button>
+        {this.props.displayOption !== "" &&
+          <div>
+            <Input placeholder="Search" onChange={this.handleSearchChange} />
+            <Button icon onClick={() => onSearch(this.state.searchText, this.props.displayOption)}>
+              <Icon name='search' />
+            </Button>
+          </div>
+        }
         {/* {displayOption === "" && <div>nothing here</div>}
         {displayOption === 'transaction' && <div>transaction</div>}
         {displayOption === 'latest' && <div>latest</div>}
