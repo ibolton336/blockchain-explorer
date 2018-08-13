@@ -30,18 +30,16 @@ class ConnectedHomePage extends React.Component {
     this.setState({ displayOption: data.value })
   }
   render() {
-    const { updateUserdata, userdata } = this.props;
+    const { displayOption } = this.state;
     return (
       <div>
         <Dropdown placeholder='Select option'
           fluid selection options={options}
           onChange={this.setDisplayOption}
         />
-
         <SearchResults
           className="form-container"
-        // onUpdateData={updateUserdata}
-        // userdata={userdata.userdata}
+          displayOption={displayOption}
         />
 
       </div>
