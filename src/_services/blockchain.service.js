@@ -7,9 +7,9 @@ const searchTransactions = (searchText) => request.get('/rawtx/' + searchText + 
 const axiosInstance = axios.create({
     baseURL: "https://blockchain.info",
     responseType: 'json',
-    headers: {
-        'Access-Control-Allow-Origin': '*',
-    },
+    // headers: {
+    //     'Access-Control-Allow-Origin': '*',
+    // },
     crossdomain: true
 });
 
