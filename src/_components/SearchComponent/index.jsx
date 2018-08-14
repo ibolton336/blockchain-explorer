@@ -1,6 +1,7 @@
 import * as React from "react";
 import { Button, Icon, Input } from "semantic-ui-react";
-import { BlockView } from "../BlockView"
+import { TransactionView} from "../TransactionView";
+import { BlockView } from "../BlockView";
 import "./SearchComponent.css"
 export class SearchComponent extends React.Component {
   constructor(props) {
@@ -30,6 +31,9 @@ export class SearchComponent extends React.Component {
             <Button className="search-button" icon onClick={() => onSearch(this.state.searchText, this.props.displayOption)}>
               <Icon name='search' />
             </Button>
+            {userdata.transaction &&
+              <TransactionView transaction={userdata.transaction} />
+            }
           </div>
         }
         {this.props.displayOption === "block" &&
