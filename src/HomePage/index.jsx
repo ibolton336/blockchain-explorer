@@ -44,6 +44,7 @@ class ConnectedHomePage extends React.Component {
   }
   render() {
     const { displayOption } = this.state;
+    const { userdata} = this.props;
     return (
       <div>
         <Dropdown placeholder='Select option'
@@ -54,6 +55,7 @@ class ConnectedHomePage extends React.Component {
           className="form-container"
           displayOption={displayOption}
           onSearch={this.handleSearch}
+          userdata={userdata}
         />
 
       </div>

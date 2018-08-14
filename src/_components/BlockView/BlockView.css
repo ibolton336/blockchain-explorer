@@ -1,0 +1,10 @@
+.block-card-container{
+    width: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 30px;
+}
+.block-card{
+    flex: 0 0 40em;
+}
