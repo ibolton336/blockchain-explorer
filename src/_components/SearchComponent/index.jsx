@@ -1,6 +1,7 @@
 import * as React from "react";
 import { Button, Icon, Input } from "semantic-ui-react";
 import { BlockView } from "../BlockView"
+import "./SearchComponent.css"
 export class SearchComponent extends React.Component {
   constructor(props) {
     super(props);
@@ -26,7 +27,7 @@ export class SearchComponent extends React.Component {
         {this.props.displayOption === "transaction" &&
           <div>
             <Input placeholder="Search" onChange={this.handleSearchChange} />
-            <Button icon onClick={() => onSearch(this.state.searchText, this.props.displayOption)}>
+            <Button className="search-button" icon onClick={() => onSearch(this.state.searchText, this.props.displayOption)}>
               <Icon name='search' />
             </Button>
           </div>
@@ -34,7 +35,7 @@ export class SearchComponent extends React.Component {
         {this.props.displayOption === "block" &&
           <div>
             <Input placeholder="Search" onChange={this.handleSearchChange} />
-            <Button icon onClick={() => onSearch(this.state.searchText, this.props.displayOption)}>
+            <Button className="search-button" icon onClick={() => onSearch(this.state.searchText, this.props.displayOption)}>
               <Icon name='search' />
             </Button>
             {userdata.block &&
@@ -44,7 +45,7 @@ export class SearchComponent extends React.Component {
         }
         {this.props.displayOption === "latest" &&
           <div>
-            <Button icon onClick={() => onSearch(this.state.searchText, this.props.displayOption)}>
+            <Button className="search-button" icon onClick={() => onSearch(this.state.searchText, this.props.displayOption)}>
               <Icon name='search' />
             </Button>
             {userdata.latestBlock &&

@@ -2,8 +2,8 @@ import * as React from "react";
 import { connect } from "react-redux";
 import { userdataActions } from "../_actions/userdata.actions";
 import { SearchComponent } from "../_components/SearchComponent";
-import { Dropdown } from "semantic-ui-react";
-
+import { Dropdown, Header} from "semantic-ui-react";
+import "./HomePage.css";
 const options = [
   {
     text: 'Search block',
@@ -46,17 +46,25 @@ class ConnectedHomePage extends React.Component {
     const { displayOption } = this.state;
     const { userdata} = this.props;
     return (
-      <div>
+      <div className="home-container">
+      <Header as='h2'>Blockchain Explorer</Header>
+
+      <div className="row">
         <Dropdown placeholder='Select option'
           fluid selection options={options}
           onChange={this.setDisplayOption}
+          className="flex-item dropdown-style"
         />
+      </div>
+      <div className="row">
         <SearchComponent
           className="form-container"
           displayOption={displayOption}
           onSearch={this.handleSearch}
           userdata={userdata}
+          className="flex-item"
         />
+      </div>
 
       </div>
     );

@@ -1,4 +1,21 @@
-/* .form-container{
-    text-align: center;
-    width: 500px !important;
-} */
+
+.home-container{
+    display:flex;
+    width: auto;
+    align-content: center;
+    justify-content: center; 
+    flex-direction: column;
+}
+.row{
+    width: auto;
+    margin: 15px;
+}
+
+.flex-item{
+    flex: 0 0 30em;
+
+}
+.dropdown-style{
+    /* flex: 1 1 30em; */
+    width: 400px;
+}
