@@ -49,9 +49,9 @@ export class SearchComponent extends React.Component {
         }
         {this.props.displayOption === "latest" &&
           <div>
-            <Button className="search-button" icon onClick={() => onSearch(this.state.searchText, this.props.displayOption)}>
+            {/* <Button className="search-button" icon onClick={() => onSearch(this.state.searchText, this.props.displayOption)}>
               <Icon name='search' />
-            </Button>
+            </Button> */}
             {userdata.latestBlock &&
               <BlockView block={userdata.latestBlock} />
             }

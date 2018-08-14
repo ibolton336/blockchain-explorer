@@ -28,6 +28,10 @@ class ConnectedHomePage extends React.Component {
 
   setDisplayOption = (e, data) => {
     this.setState({ displayOption: data.value })
+    // call latest on dropdown change
+    if(data.value === "latest"){
+      this.props.getLatest();
+    }
   }
   handleSearch = (searchVal, displayOption) => {
     switch (displayOption) {

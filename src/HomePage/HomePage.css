@@ -2,7 +2,7 @@
 .home-container{
     display:flex;
     width: auto;
-    align-content: center;
+    align-items: center;
     justify-content: center; 
     flex-direction: column;
 }
@@ -17,5 +17,5 @@
 }
 .dropdown-style{
     /* flex: 1 1 30em; */
-    width: 400px;
+    width: 400px !important;
 }
