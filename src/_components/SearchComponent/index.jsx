@@ -23,7 +23,7 @@ export class SearchComponent extends React.Component {
 
 
       <div>
-        {this.props.displayOption !== "" &&
+        {this.props.displayOption === "transaction" &&
           <div>
             <Input placeholder="Search" onChange={this.handleSearchChange} />
             <Button icon onClick={() => onSearch(this.state.searchText, this.props.displayOption)}>
@@ -31,14 +31,23 @@ export class SearchComponent extends React.Component {
             </Button>
           </div>
         }
-        {/* {displayOption === "" && <div>nothing here</div>}
-        {displayOption === 'transaction' && <div>transaction</div>}
-        {displayOption === 'latest' && <div>latest</div>}
-        {displayOption === 'block' && <div>block</div>} */}
-
+        {this.props.displayOption === "block" &&
+          <div>
+            <Input placeholder="Search" onChange={this.handleSearchChange} />
+            <Button icon onClick={() => onSearch(this.state.searchText, this.props.displayOption)}>
+              <Icon name='search' />
+            </Button>
+          </div>
+        }
+        {this.props.displayOption === "latest" &&
+          <div>
+            <Button icon onClick={() => onSearch(this.state.searchText, this.props.displayOption)}>
+              <Icon name='search' />
+            </Button>
+          </div>
+        }
       </div>
 
-      // }
     )
   }
 }

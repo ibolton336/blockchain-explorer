@@ -1,6 +1,8 @@
 import axios from 'axios'
 
 const getLatest = (payload) => request.get('/latestblock', payload);
+const searchBlocks = (searchText) => request.get('/rawblock/' + searchText);
+const searchTransactions = (searchText) => request.get('/rawtx/' + searchText);
 
 const axiosInstance = axios.create({
     baseURL: "https://blockchain.info",
@@ -19,5 +21,7 @@ const request = {
 
 export const blockchainService = {
     getLatest,
+    searchBlocks,
+    searchTransactions
 };
 

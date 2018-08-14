@@ -44,7 +44,6 @@ class ConnectedHomePage extends React.Component {
   }
   render() {
     const { displayOption } = this.state;
-    // const { handleSearch } = this.props;
     return (
       <div>
         <Dropdown placeholder='Select option'
@@ -67,12 +66,12 @@ function mapDispatchToProps(dispatch) {
     updateUserdata: payload => {
       dispatch(userdataActions.update(payload));
     },
-    // searchBlocks: payload => {
-    //   dispatch(userdataActions.searchBlocks(payload))
-    // },
-    // searchTransactions: payload => {
-    //   dispatch(userdataActions.searchTransactions(payload))
-    // },
+    searchBlocks: searchText=> {
+      dispatch(userdataActions.searchBlocks(searchText))
+    },
+    searchTransactions: searchText=> {
+      dispatch(userdataActions.searchTransactions(searchText))
+    },
     getLatest: ()=> {
       dispatch(userdataActions.getLatest())
     }
