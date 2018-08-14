@@ -67,12 +67,12 @@ function mapDispatchToProps(dispatch) {
     updateUserdata: payload => {
       dispatch(userdataActions.update(payload));
     },
-    searchBlocks: payload => {
-      dispatch(userdataActions.searchBlocks(payload))
-    },
-    searchTransactions: payload => {
-      dispatch(userdataActions.searchTransactions(payload))
-    },
+    // searchBlocks: payload => {
+    //   dispatch(userdataActions.searchBlocks(payload))
+    // },
+    // searchTransactions: payload => {
+    //   dispatch(userdataActions.searchTransactions(payload))
+    // },
     getLatest: ()=> {
       dispatch(userdataActions.getLatest())
     }
